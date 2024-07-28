@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=70.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cv2-stubs"
+version = "1.0.0"
+dependencies = []
+requires-python = ">=3"
+authors = [{ name = "Pradish Bijukchhe", email = "pradish@sandbox.com.np" }]
+description = "Improvements on official cv2 stubs"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = []
+classifiers = ["Programming Language :: Python :: 3"]
+
+[project.urls]
+Homepage = "https://github.com/sandbox-pokhara/cv2-stubs"
+Issues = "https://github.com/sandbox-pokhara/cv2-stubs/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-dir]
+"cv2-stubs" = "cv2-stubs"
+
+[tool.isort]
+line_length = 79
+force_single_line = true
+
+[tool.black]
+line-length = 79
+preview = true
+
+[tool.pyright]
+include = ["cv2-stubs", "test.py"]
+typeCheckingMode = "strict"
