@@ -1,9 +1,8 @@
 __all__: list[str] = []
 
 import typing as _typing
-
+from cv2.cuda import GpuMat
 import cv2.aruco
-import cv2.cuda
 import cv2.dnn
 import cv2.gapi
 import cv2.gapi.ot
@@ -7648,7 +7647,7 @@ def findHomography(
 @_typing.overload
 def findNonZero(
     src: cv2.typing.MatLike, idx: cv2.typing.MatLike | None = ...
-) -> cv2.typing.MatLike: ...
+) -> cv2.typing.MatLike|None: ...
 @_typing.overload
 def findNonZero(src: UMat, idx: UMat | None = ...) -> UMat: ...
 @_typing.overload
@@ -8108,8 +8107,6 @@ def imreadmulti(
 ) -> tuple[bool, _typing.Sequence[cv2.typing.MatLike]]: ...
 @_typing.overload
 def imshow(winname: str, mat: cv2.typing.MatLike) -> None: ...
-@_typing.overload
-def imshow(winname: str, mat: cv2.cuda.GpuMat) -> None: ...
 @_typing.overload
 def imshow(winname: str, mat: UMat) -> None: ...
 @_typing.overload
